@@ -19,14 +19,14 @@ jobs:
         echo Integration test run: githubactionsamazonecsdeplo-q0a9Gc4Dsaz2:00b84862-2484-4384-8ba1-f7cd0bd493e3
 
     - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: piradeepk/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-west-2
 
     - name: Deploy Amazon ECS task definition
-      uses: aws-actions/amazon-ecs-deploy-task-definition@7218b9c4a02d0482834ead0388d3cdd982888461
+      uses: piradeepk/amazon-ecs-deploy-task-definition@6d81b9b913486a1f64aeb8c97521d8827f07ab9e
       with:
         task-definition: task-definition.json
         service: sample-app-service
